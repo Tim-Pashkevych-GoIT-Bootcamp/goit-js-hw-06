@@ -4,7 +4,14 @@ class BoxesCollection {
   #defaultHeight;
   #sizeIncrement;
 
-  constructor({ width = 30, height = 30, sizeIncrement = 10 }) {
+  constructor(
+    { width = 30, height = 30, sizeIncrement = 10 } = {
+      width: 30,
+      height: 30,
+      sizeIncrement: 10,
+    },
+  ) {
+    console.log(width, height, sizeIncrement);
     this.boxes = [];
     this.#defaultWidth = width;
     this.#defaultHeight = height;
@@ -47,7 +54,7 @@ class BoxesCollection {
   }
 }
 
-const boxesCollecton = new BoxesCollection({});
+const boxesCollecton = new BoxesCollection();
 const buttons = document.querySelectorAll('button');
 const number = document.querySelector('input[type="number"]');
 const boxes = document.querySelector('#boxes');
